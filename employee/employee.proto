@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "";
+
+package employee;
+
+message EmployeeRequest {
+    int64 empId = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string dob = 4;
+    string desgination = 5;
+}
+
+message EmployeeResponse {
+    int64 empId = 1;
+}
+
+service Operation {
+    rpc WriteEmployee(EmployeeRequest) returns(EmployeeResponse) {};
+}

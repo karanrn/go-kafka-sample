@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"github.com/karanrn/go-kafka/kafkaops"
+	"github.com/karanrn/go-kafka-sample/kafkaops"
 )
 
 func main() {
