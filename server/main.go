@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"net"
+	"os"
 
 	"github.com/segmentio/kafka-go"
 	"google.golang.org/grpc"
@@ -12,11 +13,9 @@ import (
 	emp "github.com/karanrn/go-kafka-sample/employee"
 )
 
-const (
-	topic          = "new-topic"
-	broker1Address = "localhost:9092"
-	port           = ":50001"
-)
+var topic = os.Getenv("TOPIC")
+var broker1Address = os.Getenv("BROKERADDRESS")
+var port = os.Getenv("PORT")
 
 type server struct {
 	emp.UnimplementedOperationServer
